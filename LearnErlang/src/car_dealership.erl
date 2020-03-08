@@ -19,7 +19,8 @@ listPrices([Car | Rest], Currency) ->
 				   7.7e-1);
       usd -> ConvertedPrice = maps:get(Car, CarPrices)
     end,
-    io:fwrite("Price " ++
-		integer_to_list(ConvertedPrice) ++ "\n"),
+    io:fwrite("Price for " ++
+		Car ++
+		  " is: " ++ integer_to_list(ConvertedPrice) ++ "\n"),
     listPrices(Rest, Currency);
 listPrices([], _Currency) -> ok.
